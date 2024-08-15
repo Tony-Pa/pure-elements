@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #121212, #0b0c10);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  margin-top: 20px;
+
+  h1 {
+    font-size: 3.5em;
+    color: #00e5ff;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: #cccccc;
+  }
+}
+
+.cta-button {
+  padding: 15px 40px;
+  font-size: 1em;
+  color: #121212;
+  background-color: #00e5ff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #00b8cc;
+  }
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}

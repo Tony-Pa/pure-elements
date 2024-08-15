@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  margin-top: auto;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #aaaaaa;
+  background-color: #0b0c10;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, .5);
+
+  a {
+    color: #00e5ff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #00b8cc;
+    }
+  }
+}
