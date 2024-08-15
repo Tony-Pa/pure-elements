@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.logo {
+
+  svg {
+    height: 1.8em;
+    color: #fff;
+    fill: currentColor;
+    display: block;
+  }
+}
+
+header {
+  padding: 20px;
+  background-color: #0b0c10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+  h2 {
+    font-size: 1.8em;
+    color: #00e5ff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+  }
+}
+
