@@ -14,6 +14,8 @@ export abstract class PureElement extends HTMLElement {
 
   static is: string;
 
+  static css?: string;
+
   protected $$childrenProps: { prop: string | null; value: any; element: string | null }[] = [];
 
   connectedCallback() {}
@@ -32,15 +34,6 @@ export abstract class PureElement extends HTMLElement {
 
   render() {
     return '';
-  }
-
-  _render() {
-    this.cleanup();
-
-    this.root.innerHTML = this.render();
-
-    this.processChildrenProps();
-    this.attachListeners();
   }
 
   html(strings: TemplateStringsArray, ...values: Array<any>): string {
@@ -64,7 +57,7 @@ export abstract class PureElement extends HTMLElement {
 
   attachListeners() {}
 
-  private processChildrenProps() {
+  protected processChildrenProps() {
     this.$$childrenProps.forEach((child, index) => {
       if (!child.element || !child.prop) {
         return;

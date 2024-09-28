@@ -1,13 +1,13 @@
 import { Element, PureElement } from '@PureElements';
-import CSS from './header.element.scss';
+import css from './header.element.scss';
 
 @Element({
   tag: 'pure-header',
+  css,
 })
 export class Header extends PureElement {
   render() {
     return this.html`
-<style>${CSS}</style>
 <header>
   <h2>
     <span class="logo">

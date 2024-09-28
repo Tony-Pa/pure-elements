@@ -1,14 +1,14 @@
 import { Element, PureElement } from '@PureElements';
-import CSS from './top-menu.element.scss';
+import css from './top-menu.element.scss';
 
 @Element({
   tag: 'top-menu',
+  css,
 })
 export class TopMenu extends PureElement {
 
   render() {
     return this.html`
-<style>${CSS}</style>
 <nav>
     <a href="/">Home</a>
     <a href="/examples.html">Examples</a>

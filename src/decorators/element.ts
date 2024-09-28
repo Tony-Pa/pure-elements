@@ -2,6 +2,7 @@ import { PureElement } from '../core';
 
 export interface IComponentDecoratorProps {
   tag: string;
+  css?: string;
   mode?: 'open' | 'closed';
   delegatesFocus?: boolean;
   waitForAttribute?: string;
@@ -11,6 +12,8 @@ export function Element(params: IComponentDecoratorProps): (constructor: typeof 
   return (constructor: typeof PureElement) => {
     class PureElementDecorated extends constructor {
       static is = params.tag;
+
+      static css = params.css;
 
       static observedAttributes = params.waitForAttribute
         ? [
@@ -105,6 +108,15 @@ export function Element(params: IComponentDecoratorProps): (constructor: typeof 
           this.root.querySelector(selector)?.addEventListener(event, eventListener);
           this.listeners.push(() => this.root.querySelector(selector)?.removeEventListener(event, eventListener));
         }
+      }
+
+      _render() {
+        this.cleanup();
+
+        this.root.innerHTML = (PureElementDecorated.css ? `<style>${PureElementDecorated.css}</style>` : '') + this.render();
+
+        this.processChildrenProps();
+        this.attachListeners();
       }
     }
 

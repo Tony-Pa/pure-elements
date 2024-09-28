@@ -1,8 +1,9 @@
 import { Element, PureElement, mapElements } from '@PureElements';
-import CSS from './home.element.scss';
+import css from './home.element.scss';
 
 @Element({
   tag: 'home-page',
+  css,
 })
 export class HomePage extends PureElement {
   cards = [
@@ -22,8 +23,6 @@ export class HomePage extends PureElement {
 
   render() {
     return this.html`
-<style>${CSS}</style>
-
 <pure-header></pure-header>
 
 <section class="hero">
