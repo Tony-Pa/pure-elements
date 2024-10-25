@@ -1,0 +1,31 @@
+{
+  "name": "@pure-elements/examples",
+  "version": "1.0.0",
+  "description": "Pure elements examples",
+  "keywords": [
+    "web components",
+    "pure elements"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "rollup -c rollup-examples.config.ts --configPlugin typescript",
+    "start": "rollup -c rollup-examples.config.ts -w --configPlugin typescript"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rimraf": "6.0.1",
+    "rollup": "4.22.4",
+    "rollup-plugin-html-literals": "^1.1.8",
+    "rollup-plugin-scss": "^4.0.0",
+    "rollup-plugin-serve": "^2.0.0",
+    "sass": "^1.77.8",
+    "tslib": "^2.6.3",
+    "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "@pure-elements/core": "1.0.0"
+  }
+}

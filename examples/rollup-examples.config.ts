@@ -1,17 +1,19 @@
 import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
+import nodeResolve from '@rollup/plugin-node-resolve';
 import serve from 'rollup-plugin-serve';
 import scss from 'rollup-plugin-scss';
 import template from 'rollup-plugin-html-literals';
 
 export default [
   {
-    input: `examples/index.ts`,
-    output: [{ file: 'examples/js/main.js', format: 'iife' }],
+    input: `index.ts`,
+    output: [{ file: 'js/main.js', format: 'iife', name: 'examples' }],
     watch: {
-      include: ['src/**', 'examples/**'],
+      include: ['**'],
     },
     plugins: [
+      nodeResolve(),
       scss({
         outputStyle: 'compressed',
         output: false,
@@ -19,8 +21,7 @@ export default [
       template(),
       typescript({ sourceMap: false }),
       terser(),
-// @ts-ignore
-      process.argv.includes('-w') && serve(['dist', 'examples']),
+      process.argv.includes('-w') && serve(),
     ],
   },
 ];

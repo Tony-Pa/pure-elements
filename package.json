@@ -1,18 +1,27 @@
 {
   "name": "@pure-elements/core",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": [],
+  "version": "1.0.0",
+  "description": "Pure elements allows you easily create web components",
+  "bugs": "https://github.com/Tony-Pa/pure-elements/issues",
+  "homepage": "https://github.com/Tony-Pa/pure-elements",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tony-Pa/pure-elements"
+  },
+  "author": {
+    "name": "Anton Pashchenko",
+    "url": "https://github.com/Tony-Pa"
+  },
+  "keywords": ["web components"],
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "rollup -c rollup.config.ts --configPlugin typescript",
-    "start": "rollup -c examples/rollup-examples.config.ts -w --configPlugin typescript"
+    "build": "rollup -c rollup.config.ts --configPlugin typescript"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
